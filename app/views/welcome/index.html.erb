@@ -3,9 +3,6 @@
 
 <%= @homeland %>
 
-<%= image_tag "USA-Outline.jpg", class: "img-responsive"  %>
-<ul>
-<% @countries.each do |country| %>
-  <li><%= country %></li>
-<% end %>
+<div id="map-canvas"></div>
+
 </ul>
