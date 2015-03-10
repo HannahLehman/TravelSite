@@ -12,19 +12,28 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 
 $(document).ready(function (){
 
     function initialize() {
+      var myLatlng = new google.maps.LatLng(29.929266, -90.084196);
+
       var mapOptions = {
-      center: { lat:29.929266, lng:-90.084196},
-      zoom: 8
+      center: myLatlng,
+      zoom: 12,
+      scrollwheel: false
       }; 
         
       var map = new google.maps.Map(document.getElementById('map-canvas'),
-                mapOptions);    
+                mapOptions);
+
+      var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Hello Nola!'
+    });  
+      
     }
       
     google.maps.event.addDomListener(window, 'load', initialize);
